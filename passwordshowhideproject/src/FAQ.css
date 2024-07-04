@@ -1,0 +1,32 @@
+.faq-outer-div{
+  width: 100%;
+}
+
+.faq-inner-div{
+    cursor: pointer;
+
+}
+
+
+
+.faq-inner-div h1{
+    width: 100%;
+    background-color: blueviolet;
+    font-size: 1.5rem;
+    z-index: 0 !important;
+}
+
+
+.faq-inner-div .paragraph{
+    width: 100%;
+    border: 2px solid blueviolet;
+    font-size: 1.2rem;
+    margin-top: -50px;
+    opacity: 0;
+    transition: 0.5s ease;
+}
+
+.faq-inner-div-p-show{
+    margin-top: -18px !important;
+    opacity: 1 !important;
+}

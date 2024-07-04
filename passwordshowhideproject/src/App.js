@@ -3,6 +3,7 @@ import './App.css';
 import { PasswordBox } from './PasswordBox';
 import { Header } from './Header';
 import { Modal } from './Modal';
+import { FAQ } from './FAQ';
 
 function App() {
   return (
@@ -11,6 +12,7 @@ function App() {
         <Header/>
         <PasswordBox/>
         <Modal/>
+        <FAQ />
       </header>
     </div>
   );
