@@ -1,34 +1,61 @@
 import { useState } from 'react';
 import './Todo.css';
-export let Todo = function (){
+export let Todo = function () {
 
-    let [todo,setTodo] = useState([]);
+    let [todo, setTodo] = useState([]);
 
-    let saveTodoList =(event) =>{
+    let saveTodoList = (event) => {
 
-        let value = event.target.todoinput.value;
+        let value = (event.target.todoinput.value);
+        value = value.toUpperCase();
 
-        if(todo.includes(value)){
-            alert('inserted');
+        if (!todo.includes(value)) {
+
+            let finalTodo = [...todo, value];
+            setTodo(finalTodo);
         }
 
-        else{
-            let finalTodo = [...todo,value];
-            alert(finalTodo)
+        else {
+            alert('already inserted');
         }
 
-       
         event.preventDefault();
     }
 
-    return(
+    let deletefunction = ()=>{
+        alert('g')
+    }
+        
+
+    return (
         <div className="todo-outer-div">
             <h1>Todo App</h1>
             <form onSubmit={saveTodoList}>
                 <input type="text" name='todoinput' />
                 <button>Save</button>
             </form>
+
+            <ul >
+              {todo.map((value , index )=>{
+                return(
+                    <TodoList title={value} index={index+1} func= {deletefunction} />
+                )
+              })}
+            </ul>
         </div>
+    )
+
+
+   
+
+}
+
+
+
+function TodoList(value,index, deletefunction) {
+    console.warn()
+    return (
+            <li>{value.title} <button onClick={deletefunction} className='crossBtn'>&times;</button></li> 
     )
 
 }
