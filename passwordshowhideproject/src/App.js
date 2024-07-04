@@ -4,6 +4,7 @@ import { PasswordBox } from './PasswordBox';
 import { Header } from './Header';
 import { Modal } from './Modal';
 import { FAQ } from './FAQ';
+import { Todo } from './Todo';
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
         <PasswordBox/>
         <Modal/>
         <FAQ />
+        <Todo />
       </header>
     </div>
   );
