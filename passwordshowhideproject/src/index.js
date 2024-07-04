@@ -3,11 +3,33 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import { PasswordBox } from './PasswordBox';
+import { Todo } from './Todo';
+import { FAQ } from './FAQ';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
+
+let routes= [
+  {
+    path:'/',
+    Element: <App/>
+  },
+  {
+    path:'/passwordbox',
+    Element: <PasswordBox/>
+  },
+  {
+    path:'/faq',
+    Element: <FAQ/>
+  },
+  {
+    path:'/todo',
+    Element: <Todo/>
+  }
+]
 root.render(
   <React.StrictMode>
-    <App />
+    <RouterProvider routes={routes}/>
   </React.StrictMode>
 );
 
