@@ -22,9 +22,7 @@ export let Todo = function () {
         event.preventDefault();
     }
 
-    let deletefunction = ()=>{
-        alert('g')
-    }
+  
         
 
     return (
@@ -38,7 +36,7 @@ export let Todo = function () {
             <ul >
               {todo.map((value , index )=>{
                 return(
-                    <TodoList title={value} index={index+1} func= {deletefunction} />
+                    <TodoList title={value} key={index} index={index+1} list={todo} func= {setTodo} />
                 )
               })}
             </ul>
@@ -52,8 +50,14 @@ export let Todo = function () {
 
 
 
-function TodoList(value,index, deletefunction) {
-    console.warn()
+function TodoList(value,index,list, func) {
+
+    let deletefunction = ()=>{
+
+        console.warn(list)
+        
+    }
+
     return (
             <li>{value.title} <button onClick={deletefunction} className='crossBtn'>&times;</button></li> 
     )
