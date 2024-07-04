@@ -37,7 +37,7 @@ export let Todo = function () {
               {todo.map((value , index )=>{
                 let obj ={
                     title:value,
-                    indexN: index+1 ,
+                    indexN: index ,
                     list:todo,
                     func: setTodo, 
                     key: index 
