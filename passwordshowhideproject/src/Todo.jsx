@@ -35,8 +35,15 @@ export let Todo = function () {
 
             <ul >
               {todo.map((value , index )=>{
+                let obj ={
+                    title:value,
+                    indexN: index+1 ,
+                    list:todo,
+                    func: setTodo, 
+                    key: index 
+                }
                 return(
-                    <TodoList title={value} key={index} index={index+1} list={todo} func= {setTodo} />
+                    <TodoList  obj = {obj}  />
                 )
               })}
             </ul>
@@ -50,16 +57,20 @@ export let Todo = function () {
 
 
 
-function TodoList(value,index,list, func) {
+function TodoList({obj}) {
 
     let deletefunction = ()=>{
 
-        console.warn(list)
+        let listAfterDelete = obj.list.filter((value,index)=>(index!=obj.indexN));
+        obj.func(listAfterDelete);
+
+       
+        //console.warn(obj.indexN)
         
     }
 
     return (
-            <li>{value.title} <button onClick={deletefunction} className='crossBtn'>&times;</button></li> 
+            <li>{obj.title} <button onClick={deletefunction} className='crossBtn'>&times;</button></li> 
     )
 
 }
